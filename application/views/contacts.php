@@ -2,6 +2,11 @@
 
     <h1 class="page-header">Contacts</h1>
     <table class="table">
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact Number</th>
+        </thead>
         <tr>
             <td>Chaitanya Bhatt</td>
             <td>chaitanyab1992@gmail.com</td>

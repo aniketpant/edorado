@@ -1,5 +1,9 @@
 <?php include './application/views/inc/header.php'; ?>
 
+<div class="hero-unit">
+    <h1>Welcome to eDorado</h1>
+</div>
+
 <div class="share fb">
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -16,37 +20,31 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
     <div class="analytics">
-        <div class="block">
-            <h2>Analytics</h2>
-            <p>
-                The total number of people playing E-Dorado is <strong><?= $total_participants ?></strong>
-            </p>
-        </div>
-        <div class="block">
-            <h2>Analysis of top 10 levels</h2>
-            <table class="zebra-striped">
-                <th>
-                    Level
-                </th>
-                <th>
-                    Number of players
-                </th>
-                <?php
-                    foreach ($level_based as $row) {
-                ?>
-                <tr>
-                    <td>
-                    <?php echo $row->level; ?>
-                    </td>
-                    <td>
-                    <?php echo $row->number_of_participants; ?>
-                    </td>
-                </tr>
-                <?php
-                    }
-                ?>
-            </table>
-        </div>
+        <h2>Analytics</h2>
+        <p>The total number of people playing E-Dorado is <strong><?= $total_participants ?></strong></p>
+        <p>Analysis of top 10 levels</p>
+        <table class="table">
+            <th>
+                Level
+            </th>
+            <th>
+                Number of players
+            </th>
+            <?php
+                foreach ($level_based as $row) {
+            ?>
+            <tr>
+                <td>
+                <?php echo $row->level; ?>
+                </td>
+                <td>
+                <?php echo $row->number_of_participants; ?>
+                </td>
+            </tr>
+            <?php
+                }
+            ?>
+        </table>
     </div>
 
 <?php include './application/views/inc/footer.php'; ?>

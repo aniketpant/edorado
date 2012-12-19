@@ -5,7 +5,7 @@
 </script>
 
     <h1 class="page-header">The Mighty Leader Board</h1>
-    <table id="leaderboard" class="table zebra-striped">
+    <table id="leaderboard" class="table table-striped">
         <thead>
         <th>
             username

@@ -92,22 +92,22 @@ class Main extends CI_Controller {
                 $data['page_title'] = 'Leader Board';
                 $this->load->model('leaderboardmodel', 'leaderboard');
                 $data['leaderboard'] = $this->leaderboard->get_leaderboard();
-                $this->load->view('user/leaderboard', $data);
+                $this->load->view('leaderboard', $data);
         }
         
         public function contacts() {
                 $data['page_title'] = 'Contacts';
-                $this->load->view('user/contacts', $data);
+                $this->load->view('contacts', $data);
         }
                 
         public function solving() {
                 $data['page_title'] = 'How to make your way through E-Dorado?';
-                $this->load->view('user/how-to', $data);
+                $this->load->view('how-to', $data);
         }
 
         public function rules() {
                 $data['page_title'] = 'Rules';
-                $this->load->view('user/rules', $data);
+                $this->load->view('rules', $data);
         }
 
         public function logout() {            

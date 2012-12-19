@@ -16,13 +16,13 @@
     <div id="header">
         <nav class="navbar navbar-static-top">
             <div class="navbar-inner">
-                <div class="container">
+                <div class="container-fluid">
                 <?php include 'navigation.php'; ?>
                 </div>
             </disv>
         </nav>
     </div>
-    <div class="container">
+    <div class="container-fluid">
         <?php
             $loggedin = $this->session->userdata('logged_in');
             $username = $this->session->userdata('username');
