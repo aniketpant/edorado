@@ -8,7 +8,7 @@
     for ($i =0; $i < count($links); $i++)
     {
         $page = $links[$i];
-        if ($page == $currentpage)
+        if (site_url().$page == $currentpage)
             echo '<li class="active"><a href="'.site_url().$links[$i].'">'.$links_text[$i].'</a><li>';
         else
             echo '<li><a href="'.site_url().$links[$i].'">'.$links_text[$i].'</a><li>';
