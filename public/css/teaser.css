@@ -1,0 +1,248 @@
+@import url(http://fonts.googleapis.com/css?family=Chelsea+Market);
+@import url(http://fonts.googleapis.com/css?family=Frijole);
+/* HTML5 ✰ Boilerplate
+ * ==|== normalize ==========================================================
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block }
+ nav ul, nav ol {
+     list-style: none;
+     list-style-image: none;
+     margin: 0;
+     padding: 0;
+ }
+audio, canvas, video {
+    *zoom: 1;
+    display: inline-block;
+    *display: inline;
+}
+audio:not([controls]) { display: none }
+[hidden] { display: none }
+html {
+    overflow-y: scroll;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    font-size: 100%;
+}
+body {
+    line-height: 1.231;
+    margin: 0;
+    font-size: 13px;
+}
+body, button, input, select, textarea {
+    font-family: sans-serif;
+    color: #222;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+input:invalid, textarea:invalid { background-color: #f0dddd }
+input:valid, textarea:valid { }
+::-moz-selection {
+    background: #fe57a1;
+    text-shadow: none;
+    color: #fff;
+}
+::selection {
+    background: #fe57a1;
+    text-shadow: none;
+    color: #fff;
+}
+a { color: #00e }
+a:visited { color: #551a8b }
+a:focus { outline: thin dotted }
+a:hover { color: #06e }
+a:hover, a:active { outline: 0 }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: bold }
+blockquote { margin: 1em 40px }
+dfn { font-style: italic }
+hr {
+    border-top: 1px solid #ccc;
+    height: 1px;
+    border: 0;
+    margin: 1em 0;
+    display: block;
+    padding: 0;
+}
+ins {
+    background: #ff9;
+    text-decoration: none;
+    color: #000;
+}
+mark {
+    background: #ff0;
+    font-style: italic;
+    font-weight: bold;
+    color: #000;
+}
+pre, code, kbd, samp {
+    font-family: monospace, monospace;
+    _font-family: 'courier new', monospace;
+    font-size: 1em;
+}
+pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+q { quotes: none }
+q:before, q:after {
+    content: "";
+    content: none;
+}
+small { font-size: 85% }
+sub, sup {
+    line-height: 0;
+    vertical-align: baseline;
+    position: relative;
+    font-size: 75%;
+}
+sup { top: -0.5em }
+sub { bottom: -0.25em }
+ul, ol {
+    margin: 1em 0;
+    padding: 0 0 0 40px;
+}
+dd { margin: 0 0 0 40px }
+img {
+    vertical-align: middle;
+    -ms-interpolation-mode: bicubic;
+    border: 0;
+}
+svg:not(:root) { overflow: hidden }
+figure { margin: 0 }
+form { margin: 0 }
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+label { cursor: pointer }
+legend {
+    *margin-left: -7px;
+    border: 0;
+    padding: 0;
+}
+button, input, select, textarea {
+    vertical-align: baseline;
+    *vertical-align: middle;
+    margin: 0;
+    font-size: 100%;
+}
+button, input {
+    line-height: normal;
+    *overflow: visible;
+}
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box }
+input[type="search"] {
+    box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+}
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none }
+textarea {
+    vertical-align: top;
+    resize: vertical;
+    overflow: auto;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+td { vertical-align: top }
+table button, table input { *overflow: auto }
+/* ==|== primary styles =====================================================
+   Author: Aniket Pant
+   ========================================================================== */
+body { font-family: 'Chelsea Market', serif }
+#container {
+    width: 960px;
+    margin: 0 auto;
+}
+header {
+    text-align: center;
+    font-size: 4.5rem;
+}
+footer { font-size: 1rem }
+#main { font-size: 2.5rem }
+ #main p { text-align: center }
+  #main p span {
+      font-family: 'Frijole', serif;
+      color: #ff0450;
+  }
+.center { text-align: center }
+/* ==|== non-semantic helper classes ======================================== */
+.ir {
+    text-align: left;
+    text-indent: -999em;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    display: block;
+    overflow: hidden;
+    direction: ltr;
+}
+ .ir br { display: none }
+.hidden {
+    visibility: hidden;
+    display: none !important;
+}
+.visuallyhidden {
+    clip: rect(0 0 0 0);
+    width: 1px;
+    border: 0;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+}
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
+    clip: auto;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+}
+.invisible { visibility: hidden }
+.clearfix { zoom: 1 }
+/* ==|== media queries ====================================================== */
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+.clearfix:after { clear: both }
+@media only screen and (min-width: 480px) { 
+    
+}
+@media only screen and (min-width: 768px) { 
+    
+}
+/* ==|== print styles ======================================================= */
+@media print { 
+    * {
+        background: transparent !important;
+        -ms-filter: none !important;
+        text-shadow: none !important;
+        color: black !important;
+        filter: none !important;
+    }
+    a[href]:after { content: " (" attr(href) ")" }
+    a, a:visited { text-decoration: underline }
+    abbr[title]:after { content: " (" attr(title) ")" }
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: "" }
+    pre, blockquote {
+        page-break-inside: avoid;
+        border: 1px solid #999;
+    }
+    thead { display: table-header-group }
+    tr, img { page-break-inside: avoid }
+    img { max-width: 100% !important }
+}
