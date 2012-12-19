@@ -12,16 +12,17 @@
         <script src="<?php echo base_url(); ?>public/js/bootstrap.min.js" type="text/javascript"></script>
         
 </head>
-<body class="container">
-    <div id="header" class="row">
-        <a id="logo" href="<?php echo site_url(); ?>"></a>
-        <nav class="navbar">
+<body>
+    <div id="header">
+        <nav class="navbar navbar-static-top">
             <div class="navbar-inner">
-            <?php include 'navigation.php'; ?>
-            </div>
+                <div class="container">
+                <?php include 'navigation.php'; ?>
+                </div>
+            </disv>
         </nav>
     </div>
-    <div id="content" class="row">
+    <div class="container">
         <?php
             $loggedin = $this->session->userdata('logged_in');
             $username = $this->session->userdata('username');
