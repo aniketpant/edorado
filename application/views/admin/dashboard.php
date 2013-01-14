@@ -2,7 +2,7 @@
 
     <h1 class="page-header">Dashboard <small>Admins Only</small></h1>    
 
-    <div class="alert alert-block <?php if ($this->session->userdata('status') == 'running') echo 'alert-success'; else echo 'alert-error'; ?>"><p>Hell yeah! It's <strong><?= $this->session->userdata('status') ?></strong></p></div>
+    <div class="alert alert-block <?php if ($this->session->userdata('status') == 'running') echo 'alert-success'; else echo 'alert-error'; ?>"><p>Hell yeah! It's <strong><?= $this->session->userdata('status') ?></strong>!</p></div>
 
 <?php
   echo form_open('admin', '', array('class' => 'form form-horizontal'));
