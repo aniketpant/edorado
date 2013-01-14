@@ -36,13 +36,16 @@ class Main extends CI_Controller {
                     else //successful login
                     {
                         $this->load->model('usermodel', 'user');
+                        $this->load->model('settingsmodel', 'settings');
                         $id = $this->user->get_loginid($username);
                         $is_admin = $this->user->is_admin($id);
+                        $status = $this->settings->get_status();
                         $newdata = array(
                             'username'  => $username,
                             'logged_in' => TRUE,
                             'loginid'   => $id,
-                            'is_admin'  => $is_admin
+                            'is_admin'  => $is_admin,
+                            'status'    => $status
                         );
 
                         $this->session->set_userdata($newdata);

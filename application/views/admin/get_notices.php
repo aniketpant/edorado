@@ -65,7 +65,7 @@
                     'placeholder'   => 'Message',
                     'value'         => ''
                 );
-                echo form_input($data_message);
+                echo form_textarea($data_message);
             ?>
             </td>
             <td>

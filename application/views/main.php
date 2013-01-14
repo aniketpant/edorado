@@ -1,7 +1,8 @@
 <?php include './application/views/inc/header.php'; ?>
 
 <div class="hero-unit">
-    <h1>Welcome to eDorado!</h1>
+    <h1>Welcome to eDorado '13</h1>
+    <p><?php echo anchor('/main/register', 'Registrations'); ?> are now open.</p>
 </div>
 
 <div class="share fb">

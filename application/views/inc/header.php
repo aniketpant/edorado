@@ -32,15 +32,8 @@
             </disv>
         </nav>
     </div>
-    <div class="container-fluid">
+    <div id="content" class="container-fluid">
         <?php
             $loggedin = $this->session->userdata('logged_in');
             $username = $this->session->userdata('username');
-            if ($loggedin == TRUE) {
-        ?>
-        <p class="user pull-right">
-            Welcome, <strong><?php echo $username; ?></strong>. (<a href="<?php echo site_url(); ?>/home/logout">Logout</a>)
-        </p>
-        <?php
-            }
         ?>

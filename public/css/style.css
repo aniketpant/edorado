@@ -2,23 +2,15 @@
     CONTENT AREAS
 \*-----------------------------------------*/
 html { background: #fefefe }
-#header a#logo {
-    background: url('../images/edorado-banner.jpg') no-repeat;
-    width: 940px;
-    height: 200px;
-    position: relative;
-    margin: 0 auto 10px;
-    box-shadow: 0 2px 5px #ccc;
-}
 /*-----------------------------------------*\
     LEVELS
 \*-----------------------------------------*/
-ul.levels li.box {
+.levels .box {
     list-style: none;
     display: inline-block;
     margin: 5px;
 }
-ul.levels li.box a {
+.levels .box a {
     width: 100px;
     height: 100px;
     display: block;
@@ -32,7 +24,7 @@ ul.levels li.box a {
     -moz-transition: all 250ms ease-in-out;
     transition: all 250ms ease-in-out;
 }
-ul.levels li.box a:hover {
+.levels .box a:hover {
     text-decoration: none;
     color: #fff;
     background: #ff0450;
@@ -44,6 +36,7 @@ ul.levels li.box a:hover {
 }
 #question-data {
     position: fixed;
+    background: #222;
     background: rgba(255,255,255,0.75);
     box-shadow: -2px -2px 2px rgba(0,0,0,0.25), -2px 2px 2px rgba(0,0,0,0.25);
     width: 250px;
@@ -54,10 +47,15 @@ ul.levels li.box a:hover {
 /**
  * Recommend
  */
-div.share{
+.share{
+    display: table;
     margin: 0 auto;
+    padding: 2rem 0 0;
 }
-div.fb {
-    padding: 20px;
-    width: 450px;
+
+@media only screen and (min-width: 960px) {
+    .container-fluid {
+        width: 960px;
+        margin: 0 auto;
+    }
 }

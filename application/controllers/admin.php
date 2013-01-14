@@ -4,7 +4,13 @@ class Admin extends CI_Controller {
     
         public function index() {
                 $data['page_title'] = 'Administrator';
-                $this->load->view('admin/start', $data);
+                if ($this->input->server('REQUEST_METHOD') === 'POST') {
+                    $status = $this->input->post('status');
+                    $this->load->model('settingsmodel', 'settings');
+                    $this->settings->update_status($status);
+                    $this->session->set_userdata(array('status' => $this->settings->get_status()));
+                }
+                $this->load->view('admin/dashboard', $data);
         }
     
         public function questions() {
@@ -39,15 +45,12 @@ class Admin extends CI_Controller {
                     }
                     else
                     {
-                        //echo var_dump(is_dir('./uploads/'));
+                        // echo var_dump(is_dir('./uploads/'));
 
-                        if ( ! $this->upload->do_upload())
-                        {
-                                $error = array('error' => $this->upload->display_errors());
-                        }
-                        else
-                        {
-                                $upload_data = $this->upload->data();
+                        if ( ! $this->upload->do_upload() ) {
+                            $error = array('error' => $this->upload->display_errors());
+                        } else {
+                            $upload_data = $this->upload->data();
                         }
 
                         $comment = $this->input->post('comment');
@@ -55,7 +58,7 @@ class Admin extends CI_Controller {
                         $this->load->model('adminmodel', 'admin');
                         $num_questions = $this->admin->get_total_questions();
                         $question_data = array(
-                            'level'              =>  $num_questions+1,
+                            'level'         =>  $num_questions+1,
                             'comment'       => $comment,
                             'answer'        => $answer,
                             'image_name'    => $upload_data['file_name'],

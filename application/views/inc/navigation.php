@@ -3,7 +3,7 @@
     $currentpage = 'http://'.$_SERVER['SERVER_NAME'].$_SERVER["PHP_SELF"];
 ?>
     <ul class="nav navbar-static-top">
-    <a class="brand" href="<?= site_url() ?>">eDorado</a>
+    <a class="brand" href="<?= site_url() ?>">eDorado '13</a>
 <?php
     for ($i =0; $i < count($links); $i++)
     {

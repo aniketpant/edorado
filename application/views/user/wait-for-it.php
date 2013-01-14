@@ -2,7 +2,17 @@
 
 	<div class="hero-unit">
 	    <h1 class="page-header">Hang on mate!</h1>
-	    <p>Wait for it and it shall start soon.</p>
+	    <p>Hold your horses till 17th Feb 2013.</p>
 	</div>
+
+  <h2>We're nearly set.</h2>
+
+  <div class="progress progress-striped active">
+    <div class="bar" style="width: 85%;"></div>
+  </div>
+
+  <?php if(!$is_complete) { ?>
+  <div class="alert alert-block alert-info"><?php echo anchor('/home/profile"', 'Please update your profile in the meantime.'); ?></div>
+  <?php } ?>
 
 <?php include './application/views/inc/footer.php'; ?>

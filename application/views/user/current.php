@@ -1,13 +1,13 @@
 <?php include './application/views/inc/header.php'; ?>
 
-    <span class="details">
-        Current Level: <strong>Level #<?php echo $level+1; ?></strong>
-    </span>
-    <br/><br/>
-    <?php if($is_complete == 0) { ?>
-    <div class="alert-message"><span class="label label-important">Important</span>&nbsp;Please update your profile <a href="<?php echo site_url(); ?>/home/profile">here</a>.</div>
+    <h1>Current Level <small>Level #<?php echo $level+1; ?></small></h1>
+    
+    <?php if(!$is_complete) { ?>
+    <div class="alert alert-block alert-info"><?php echo anchor('/home/profile"', 'Please update your profile'); ?></div>
     <?php } ?>
+
     <div class="alert-message info">All answers to be entered in lowercase, without spaces.<br/>The numbers need to be written as numerals and not in words.</div>
+    
  <?php if($public_notices) { ?>
      <div class="alert-message block-message">
         <?php

@@ -4,7 +4,7 @@ class Home extends CI_Controller {
     
         public function index() 
         {
-                if ($this->session->userdata('logged_in') == TRUE) {
+                if ($this->session->userdata('logged_in')) {
                     $data['loggedin'] = $this->session->userdata('logged_in');
                     $this->load->model('usermodel', 'user');
                     $this->load->model('noticemodel', 'notice');
@@ -20,20 +20,24 @@ class Home extends CI_Controller {
                     $public_notices = $this->notice->get_public_notices();
                     $num_questions = $this->admin->get_total_questions();
 
-                    if ($level == 85) {
-                        redirect('home/complete', 'location');
-                    }
-                    else if ($level == $num_questions) {
+                    if ($this->session->userdata('status') == 'running') {
+                        if ($level == 85) {
+                            redirect('home/complete', 'location');
+                        }
+                        else if ($level == $num_questions) {
+                            redirect('home/wait_for_it', 'location');
+                        }
+                        else {
+                            $data['page_title'] = 'Current Level';
+                            $data['notices'] = $notices;
+                            $data['public_notices'] = $public_notices;
+                            $data['level'] = $level;
+                            $this->session->set_userdata(array('current' => $level+1));
+                            $this->load->view('user/current', $data);
+                        }
+                    } else {
                         redirect('home/wait_for_it', 'location');
                     }
-                    else {
-                        $data['page_title'] = 'Current Level';
-                        $data['notices'] = $notices;
-                        $data['public_notices'] = $public_notices;
-                        $data['level'] = $level;
-                        $this->session->set_userdata(array('current' => $level+1));
-                        $this->load->view('user/current', $data);
-                    }                    
                 }
                 else {
                     redirect('404', 'location');
@@ -41,7 +45,7 @@ class Home extends CI_Controller {
         }
 
         public function question() {
-                if ($this->session->userdata('logged_in') == TRUE) {
+                if ($this->session->userdata('logged_in')) {
                     $this->load->model('usermodel', 'user');
                     $this->load->model('questionmodel', 'question');
                     $this->load->model('answermodel', 'answer');
@@ -76,7 +80,7 @@ class Home extends CI_Controller {
         }
 
         public function submitanswer() {
-                if ($this->session->userdata('logged_in') == TRUE) {
+                if ($this->session->userdata('logged_in')) {
                     $username = $this->session->userdata('username');
                     $loginid = $this->session->userdata('loginid');
 
@@ -93,11 +97,8 @@ class Home extends CI_Controller {
 
                     if ($answer == $correct_answer) {
                         $this->user->update_level($loginid, $level);
-                        redirect('home/question', 'location');
                     }
-                    else {
-                        redirect('home/question', 'location');
-                    }
+                    redirect('home/question', 'location');
                 }
                 else {
                     redirect('404', 'location');
@@ -105,7 +106,7 @@ class Home extends CI_Controller {
         }
         
         public function profile() {
-                if ($this->session->userdata('logged_in') == TRUE) {
+                if ($this->session->userdata('logged_in')) {
                     $data['page_title'] = 'Profile';
                     $this->form_validation->set_error_delimiters('<div class="alert-message error">', '</div>');
 
@@ -147,7 +148,7 @@ class Home extends CI_Controller {
         }
         
         public function wait_for_it() {
-                if ($this->session->userdata('logged_in') == TRUE) {
+                if ($this->session->userdata('logged_in')) {
                     $data['page_title'] = 'Wait for it';
                     $this->load->view('user/wait-for-it', $data);
                 }
@@ -157,7 +158,7 @@ class Home extends CI_Controller {
         }
 
         public function complete() {
-                if ($this->session->userdata('logged_in') == TRUE) {
+                if ($this->session->userdata('logged_in')) {
                     $data['page_title'] = 'Congratulations';
                     $this->load->view('user/completed', $data);
                 }
