@@ -15,7 +15,7 @@ class Main extends CI_Controller {
 
         public function login() {
                 $data['page_title'] = 'Login';
-                $this->form_validation->set_error_delimiters('<div class="alert-message error">', '</div>');
+                $this->form_validation->set_error_delimiters('<div class="alert alert-block alert-error">', '</div>');
                 if ($this->form_validation->run('login') == FALSE) //present and validate login form
                 {                    
                     $data['error'] = '';
@@ -62,7 +62,7 @@ class Main extends CI_Controller {
         
         public function register() {
                 $data['page_title'] = 'Register';
-                $this->form_validation->set_error_delimiters('<div class="alert-message error">', '</div>');
+                $this->form_validation->set_error_delimiters('<div class="alert alert-block alert-error">', '</div>');
                 if ($this->form_validation->run('signup') == FALSE) //present and validate signup form
                 {                    
                     $data['error'] = '';
@@ -111,6 +111,11 @@ class Main extends CI_Controller {
         public function rules() {
                 $data['page_title'] = 'Rules';
                 $this->load->view('rules', $data);
+        }
+
+        public function contribution() {
+                $data['page_title'] = 'Contribution';
+                $this->load->view('contribution', $data);
         }
 
         public function logout() {            

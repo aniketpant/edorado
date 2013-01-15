@@ -16,7 +16,6 @@
     ?>
     <span class="help-block">Your username here</span>
     </div>
-    <br/>
     <?php
         echo form_label('Password', 'password');
         $arr_password = array(
@@ -31,7 +30,6 @@
     ?>
     <span class="help-block">Enter your desired password here.</span>
     </div>
-    <br/>
     <?php
         echo form_label('Confirm Password', 'passconf');
         $arr_passconf = array(
@@ -46,7 +44,6 @@
     ?>
     <span class="help-block">Enter your password again to confirm.</span>
     </div>
-    <br/>
     <?php
         $arr_button = array(
             'name'  => 'submit',
@@ -63,7 +60,7 @@
     <?php
         echo form_close();
         if ($error!="")
-            echo '<div class="alert-message error">'. $error.' </div>';
+            echo '<div class="alert alert-block alert-error">'. $error.' </div>';
         echo validation_errors();
     ?>
 
