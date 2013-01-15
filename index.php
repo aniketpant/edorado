@@ -104,6 +104,12 @@ if (defined('ENVIRONMENT'))
 	// The controller function you wish to be called.
 	// $routing['function']	= '';
 
+/**
+ *  set the default timezone.
+ */
+
+date_default_timezone_set('Asia/Kolkata'); 
+
 
 /*
  * -------------------------------------------------------------------

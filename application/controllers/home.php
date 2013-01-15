@@ -122,7 +122,7 @@ class Home extends CI_Controller {
         public function profile() {
                 if ($this->session->userdata('logged_in')) {
                     $data['page_title'] = 'Profile';
-                    $this->form_validation->set_error_delimiters('<div class="alert-message error">', '</div>');
+                    $this->form_validation->set_error_delimiters('<div class="alert alert-block alert-error">', '</div>');
 
                     $this->load->model('usermodel', 'user');
                         
@@ -165,7 +165,11 @@ class Home extends CI_Controller {
                 if ($this->session->userdata('logged_in')) {
                     $data['page_title'] = 'Wait for it';
                     $this->load->helper('date');
-                    $data['remaining'] = unix_to_human((human_to_unix('21/01/2013') - now()), TRUE, 'us');
+                    $start = human_to_unix('2013-01-15 06:00 PM');
+                    $now = gmt_to_local(now(), 'UP45', TRUE);
+                    $end = human_to_unix('2013-01-21 00:00 AM');
+                    $data['bar'] = ($now - $start)/($end - $start) * 100;
+                    $data['start'] = timespan($now, $end);
                     $this->load->view('user/wait-for-it', $data);
                 }
                 else {
