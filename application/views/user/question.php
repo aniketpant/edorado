@@ -1,9 +1,6 @@
 <?php include './application/views/inc/header.php'; ?>
 
-    <span class="details">
-        <strong>Level #<?php echo $level+1; ?></strong>
-    </span>
-    <br/>
+    <h1>Current Level <small>Level #<?php echo $level+1; ?></small></h1>
     <div class="question">
         <?php
             if ($question->image_name) {
@@ -56,9 +53,7 @@
     if ($last_answers != FALSE) {
     ?>
     <div class="last-answers">
-        <h1 class="page-header">
-            Your Last Tried Answers
-        </h1>
+        <h2>Your Last Tried Answers</h2>
         <ol>
         <?php
             foreach ($last_answers as $last_answer) {
