@@ -113,6 +113,11 @@ class Main extends CI_Controller {
                 $this->load->view('rules', $data);
         }
 
+        public function contribution() {
+                $data['page_title'] = 'Contribution';
+                $this->load->view('contribution', $data);
+        }
+
         public function logout() {            
                 $data['page_title'] = "Logged Out";
                 $this->simpleloginsecure->logout();

@@ -3,7 +3,7 @@
     <h1 class="page-header">Rules</h1>
     <ol>
         <li>
-            Please register at <a href="http://www.bits-quark.org/2013/">Quark 2013</a> before you register for E-Dorado.<br/>
+            Please register at <a href="http://www.bits-quark.org">Quark</a> before you register for E-Dorado.<br/>
         </li>
         <li>
             We shall be contacting you with the details corresponding to your Quark ID, otherwise it shall lead to your <strong>disqualification</strong>.
