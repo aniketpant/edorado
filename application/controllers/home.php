@@ -122,7 +122,7 @@ class Home extends CI_Controller {
         public function profile() {
                 if ($this->session->userdata('logged_in')) {
                     $data['page_title'] = 'Profile';
-                    $this->form_validation->set_error_delimiters('<div class="alert-message error">', '</div>');
+                    $this->form_validation->set_error_delimiters('<div class="alert alert-block alert-error">', '</div>');
 
                     $this->load->model('usermodel', 'user');
                         
