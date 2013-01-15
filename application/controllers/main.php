@@ -86,7 +86,7 @@ class Main extends CI_Controller {
                         $id = $this->user->get_loginid($username);
                         
                         $this->user->add_userdetails($id);
-                        $this->load->view('user/success', $data);
+                        $this->load->view('success', $data);
                     }
                 }
         }

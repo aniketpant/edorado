@@ -2,7 +2,8 @@
 
 	<div class="hero-unit">
 	    <h1 class="page-header">Hang on mate!</h1>
-	    <p>Hold your horses till 17th Feb 2013.</p>
+	    <p>Hold your horses till <strong>21st Jan, 00:00 Hrs</strong>.</p>
+      <p>Time to go <?= $remaining ?></p>
 	</div>
 
   <h2>We're nearly set.</h2>

@@ -5,19 +5,21 @@
     <p><?php echo anchor('/main/register', 'Registrations'); ?> are now open.</p>
 </div>
 
+<p class="lead" style="text-align: center">For all announcements, follow <a href="https://www.facebook.com/bitsedorado">E-Dorado on Facebook</a>.</p>
+
 <div class="share fb">
+<div class="fb-like" data-href="https://www.facebook.com/bitsedorado" data-send="true" data-width="450" data-show-faces="true"></div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=260345107343206";
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=465363156848461";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-<div class="fb-like" data-href="https://www.facebook.com/pages/E-Dorado/147373291982761" data-send="false" data-width="450" data-show-faces="true"></div>
 </div>
 <div class="share twitter">
-<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://edorado.bits-quark.org" data-text="Check out E-Dorado - the online treasure hunt." data-via="aniket_pant" data-hashtags="quark2012">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://edorado.bits-quark.org" data-text="Check out eDorado '13 - the online treasure hunt." data-via="aniket_pant" data-hashtags="quark2013">Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
     <div class="analytics">

@@ -150,6 +150,8 @@ class Home extends CI_Controller {
         public function wait_for_it() {
                 if ($this->session->userdata('logged_in')) {
                     $data['page_title'] = 'Wait for it';
+                    $this->load->helper('date');
+                    $data['remaining'] = unix_to_human((human_to_unix('21/01/2013') - now()), TRUE, 'us');
                     $this->load->view('user/wait-for-it', $data);
                 }
                 else {
