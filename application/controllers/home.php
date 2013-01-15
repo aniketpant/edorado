@@ -51,7 +51,7 @@ class Home extends CI_Controller {
                     $this->load->model('answermodel', 'answer');
                     $this->load->model('adminmodel', 'admin');
 
-                    $this->load->driver('cache');
+                    $this->load->library('memcached_library');
 
                     $username = $this->session->userdata('username');
                     $loginid = $this->session->userdata('loginid');
@@ -67,16 +67,17 @@ class Home extends CI_Controller {
                         redirect('home/wait_for_it', 'location');
                     }
                     else {
-                        $question_data = $this->cache->memcached->get('question_data');
+                        $question_data = $this->memcached_library->get('question_data');
 
                         $data['page_title'] = 'Question #'.($level+1);
                         $data['loggedin'] = $this->session->userdata('logged_in');
                         $data['level'] = $level;
                         $current = $level+1;
 
-                        if (!empty($question_data)) {
+                        if (empty($question_data)) {
                             $question = $this->question->get_question($current);
-                            $this->cache->memcached->save('question_data', $question, 3600);
+                            $this->memcached_library->add('question_data', $question);
+                            $question_data = $this->memcached_library->get('question_data');
                         } else {
                             $data['question'] = $question_data;
                         }
@@ -95,18 +96,21 @@ class Home extends CI_Controller {
                     $loginid = $this->session->userdata('loginid');
 
                     $this->load->model('usermodel', 'user');
+                    $this->load->model('answermodel', 'answer');
+
+                    $this->load->library('memcached_library');
 
                     $level = $this->user->get_level($loginid);
                     $data['level'] = $level;
                     $current = $level+1;
-                    $question_data = $this->cache->memcached->get('question_data');
+                    $question_data = $this->memcached_library->get('question_data');
                     $correct_answer = $question_data->answer;
                     $answer = $this->input->post('answer');
                     $this->answer->save_answer($answer, $current, $loginid);
 
                     if ($answer == $correct_answer) {
                         $this->user->update_level($loginid, $level);
-                        $this->cache->memcached->clean();
+                        $this->memcached_library->delete('question_data');
                     }
                     redirect('home/question', 'location');
                 }
