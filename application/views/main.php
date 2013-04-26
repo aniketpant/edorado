@@ -26,6 +26,7 @@
         <?php if ($total_participants >= 50): ?>
         <h2>Analytics</h2>
         <p>The total number of people playing E-Dorado is <strong><?= $total_participants ?></strong></p>
+        <h3>Number of players vs Levels</h3>
         <figure style="width: 400px; height: 300px;" id="analysis"></figure>
         <script type="text/javascript">
             var data = {
@@ -34,11 +35,12 @@
               "main": [
                 {
                   "data": [
-                    <?php foreach ($level_based as $row): ?>{
+                    <?php foreach ($level_based as $row) { ?>
+                    {
                       "x": "<?= $row['level'] ?>",
                       "y": "<?= $row['number_of_participants'] ?>"
                     },
-                    <?php endforeach; ?>
+                    <?php } ?>
                   ]
                 }
               ]
