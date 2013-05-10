@@ -1,5 +1,7 @@
 ## eDorado
 
+[![Project Status](http://stillmaintained.com/aniketpant/edorado.png)](https://stillmaintained.com/aniketpant/edorado)
+
 by [Aniket Pant](http://aniketpant.com)
 
 **eDorado** is an on-line treasure hunt that takes place every year as a part of [Quark](http://bits-quark.org).
